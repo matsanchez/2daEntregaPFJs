@@ -18,7 +18,7 @@ if(cart.length == 0){
             <br>
             <h2>Te invito a que pases por nuestra seccion de Merchandising<br> y lleves algo para ti o para regalar</h2>
             <br>
-            <a href="index.html">
+            <a href="home.html">
             <button id="" class="btn btn-light">IR A COMPRAR</button>
             </a>
         </div>
