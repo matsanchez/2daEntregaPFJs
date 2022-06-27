@@ -3,7 +3,7 @@ let merchanProducts = [
         id: 01,
         name:"Bolsa Ecologica",
         price:50,
-        img:"../img/merchandising/bolsaeco.png"
+        img:"./img/merchandising/bolsaeco.png"
     },
     {
         id: 02,
