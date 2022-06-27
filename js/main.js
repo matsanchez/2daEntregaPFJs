@@ -56,7 +56,7 @@ function setUser() {
 
   localStorage.setItem('users', JSON.stringify(users));
 
-  window.location.replace("index.html");
+  window.location.replace("home.html");
 }
 
 
