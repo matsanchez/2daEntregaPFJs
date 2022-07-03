@@ -6,6 +6,9 @@
 a{
     text-decoration: none;
 }
+.links, link:hover{
+    color: white;
+}
 body{
     background-image: url(../img/bg4.jpg);
 }
@@ -13,6 +16,7 @@ body{
     background-image: url(../img/bg-home.jpg);
     background-position: center center;
     background-size: contain;
+    background-repeat: no-repeat;
 }
 .bgHome_right{
     background: #ffe259;
@@ -80,54 +84,6 @@ hr{
 .menu-center img{
     width: 250px;
 }
-.box-container{
-    background-image: url(../img/header.png);
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    margin-top: 50px;
-    width: 700px;
-    display: flex;
-    flex-flow: column;
-    border-radius: 15px;
-    padding: 20px;
-}
-.question{
-    background-color: #FFF;
-    border-radius: 5PX;
-    font-size: 1.2rem;
-    padding: 20PX;
-    color: #000;
-    text-align: center;
-    font-family: sans-serif;
-}
-.option{
-    color: #FFF;
-    background-color: #767676;
-    margin-top: 10px;
-    border-radius: 5px;
-    padding: 10px;
-    cursor: pointer;
-}
-.option:hover{
-    color: #000;
-    background-color: #FFF;
-}
-.indice{
-    display: inline-block;
-    margin: 10px;
-    background-color: #FFF;
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-}
-.false{
-    background-color: red;
-}
-.true{
-    background-color: rgb(0, 175, 0);
-}
-
 /* ///////////////////////////////////////////////////// */
 /* ESTILOS SECCION MERCHANDISING */
 /* ///////////////////////////////////////////////////// */
@@ -183,4 +139,155 @@ hr{
 	.slick-prev {
 		display: none !important;
 	}
+}
+
+/* ///////////////////////////////////////////// */
+/* ESTILOS SECTION QUESTIONS */
+/* /////////////////////////////////////// */
+.boxQuiz .boxTop{
+    position: relative;
+    z-index: 2;
+    height: 70px;
+    padding: 0 30px;
+    background: #fff;
+    border-radius: 5px 5px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 3px 5px 1px rgba(0,0,0,0.1);
+}
+
+.boxQuiz .boxTop .titleQuiz{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.boxQuiz .boxTop .timer{
+    color: #000;
+    background: #d1d1d1;
+    border: 1px solid #ff9100;
+    height: 30px;
+    padding: 0 8px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 145px;
+}
+
+.boxQuiz .boxTop .timer .timeText{
+    font-weight: 400;
+    font-size: 17px;
+    user-select: none;
+}
+
+.boxQuiz .boxTop .timer .timerNumber{
+    font-size: 28px;
+    font-weight: 700;
+    padding: 30px 20px 20px 20px;
+    margin-bottom: 15px;
+    height: 95px;
+    width: 80px;
+    color: #ffe259;
+    text-align: center;
+    background-image: url(../img/icons/icon_chronometer.png);
+    background-size: cover;
+    user-select: none;
+}
+
+.boxQuiz .boxTop .timeProgress{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    height: 3px;
+    background: #007bff;
+}
+.question{
+    background-color: #FFF;
+    border-radius: 5px;
+    font-size: 1rem;
+    padding: 30px 5px 30px 5px;
+    color: #000;
+    text-align: center;
+    font-family: sans-serif;
+}
+.titleQuiz{
+    font-size: 1.5rem;
+    font-family: sans-serif;
+    font-weight: bold;
+    padding: 5px;
+}
+.option{
+    margin-top: 10px;
+    border-radius: 5px;
+    border: rgb(255, 174, 0) solid 1px;
+    padding: 10px;
+    cursor: pointer;
+}
+.option:hover{
+    color: #000;
+    background-color: rgb(220, 220, 220);
+}
+.score{
+    text-align: center;
+    height: 50px;
+}
+.indice, .false, .true{
+    display: inline-block;
+    margin: 5px;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+.false{
+    background-image: url(../img/icons/icon_false.png);
+    background-size: cover;
+}
+.true{
+    background-image: url(../img/icons/icon_true.png);
+    background-size: cover;
+}
+#quiz_game{
+    cursor: pointer;
+}
+/* //////////////////////////////////// */
+/* ESTILOS JUEGO DE MEMORIA */
+/* /////////////////////////////////////// */
+.notifications{
+    background-color: #ffe259;
+    width: 400px;
+}
+.tableGameMemory{
+    margin: auto;
+    width: 700px;
+    display: flex;
+}
+.btn_memory{
+    width: 120px;
+    height: 120px;
+    border: none;
+    border-radius: 5px;
+}
+.cards_game_memory{
+    width: 70px;
+}
+#memory_game{
+    cursor: pointer;
+}
+/* ///////////////////////////////////////////////////// */
+/* VALIDACION DE FORMULARIO */
+/* ///////////////////////////////////////////////////// */
+
+.validate_error input{
+    border: solid 2px red!important;
+}
+.validate_confirm input{
+    border: solid 2px rgb(72, 255, 0)!important;
+}
+.msg_error{
+    font-size: 0.7rem;
+    display: none;
+}
+.msg_error_active{
+    display: block;
 }

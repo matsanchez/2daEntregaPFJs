@@ -3,66 +3,73 @@ let merchanProducts = [
         id: 01,
         name:"Bolsa Ecologica",
         price:50,
-        img:"./img/merchandising/bolsaeco.png"
+        img:"../img/merchandising/bolsaeco.png"
     },
     {
         id: 02,
         name:"Cuaderno",
         price:500,
-        img:"./img/merchandising/cuaderno.png"
+        img:"../img/merchandising/cuaderno.png"
     },
     {
         id: 03,
         name:"Gorra",
         price:800,
-        img:"./img/merchandising/gorra.png"
+        img:"../img/merchandising/gorra.png"
     },
     {
         id: 04,
         name:"Mate",
         price:500,
-        img:"./img/merchandising/mate.png"
+        img:"../img/merchandising/mate.png"
     },
     {
         id: 05,
         name:"Matera",
         price:1500,
-        img:"./img/merchandising/matera.png"
+        img:"../img/merchandising/matera.png"
     },
     {
         id: 06,
         name:"Mochila",
         price:2500,
-        img:"./img/merchandising/mochila.png"
+        img:"../img/merchandising/mochila.png"
     },
     {
         id: 07,
         name:"Porta Notebook",
         price:1800,
-        img:"./img/merchandising/portanotebook.png",
+        img:"../img/merchandising/portanotebook.png",
     
     },
     {
         id: 08,
         name:"Remera",
         price:3000,
-        img:"./img/merchandising/remera.png"
+        img:"../img/merchandising/remera.png"
     },
     {
         id: 09,
         name:"Termo",
         price:6000,
-        img:"./img/merchandising/termo.png"
+        img:"../img/merchandising/termo.png"
     },
     {
         id: 10,
         name:"Articulos de Oficina",
         price:1500,
-        img:"./img/merchandising/varios.png"
+        img:"../img/merchandising/varios.png"
     }
 ]
 let users;
-let cart;
+let cart = [];
+const DOMcartCounter = document.getElementById('cartCounter');
+const DOMbtn_quiz_game = document.getElementById('quiz_game').addEventListener('click', e => {
+    window.open('quiz_game.html', '_self');
+})
+const DOMbtn_memory_game = document.getElementById('memory_game').addEventListener('click', e => {
+    window.open('memory_game.html', '_self');
+})
 
 if(JSON.parse(localStorage.getItem('cart')) || JSON.parse(localStorage.getItem('users')))  {
     cart = JSON.parse(localStorage.getItem('cart'));
@@ -74,6 +81,13 @@ if(JSON.parse(localStorage.getItem('cart')) || JSON.parse(localStorage.getItem('
     users = JSON.parse(localStorage.getItem('users'))
 }
 
+showProducts();
+
+if (cart.length === 0) {
+    DOMcartCounter.innerHTML = cart.length + 0
+}else{
+    DOMcartCounter.innerHTML = cart.length
+}
 function showProducts (){
     for (let i = 0; i < merchanProducts.length; i++) {
         const element = merchanProducts[i];
@@ -92,7 +106,6 @@ function showProducts (){
             containerProduct.innerHTML += card
     }
 }
-showProducts();
 
 const addBtn = document.getElementsByClassName('btn');
 
@@ -112,9 +125,7 @@ function addCart(e){
         let cartFilter = cart.filter(id => id.id != inCart.id)
         cart = [...cartFilter, {...inCart, cantidad: inCart.cantidad + 1}]
     }
-    localStorage.setItem('cart', JSON.stringify(cart))
-    location.reload();
+    
+    localStorage.setItem('cart', JSON.stringify(cart));
+    DOMcartCounter.innerHTML = cart.length
 }
-
-const counter = document.getElementById('cartCounter');
-counter.innerHTML = cart.length;
