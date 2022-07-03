@@ -43,6 +43,7 @@ const DOMgetInfo = document.getElementById('getInfo').addEventListener('click', 
 const DOMinputs = document.querySelectorAll('input');
 
 function validarFormulario(e){
+    e.preventDefault();
     switch (e.target.name) {
         case "user":
             validarCampos(expReg.user, e.target, 'name')
