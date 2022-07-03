@@ -39,7 +39,7 @@ const expReg = {user: /^[a-zA-Z0-9\_\-]{4,16}$/, email: /^\w+([\.-]?\w+)*@\w+([\
 
 const inputs = {name: false, email: false, }
 
-const DOMgetInfo = document.getElementById('getInfo').addEventListener('click', setUser);
+const DOMgetInfo = document.getElementById('getInfo').addEventListener('click', setUser(e));
 const DOMinputs = document.querySelectorAll('input');
 
 function validarFormulario(e){
@@ -84,6 +84,7 @@ class GetUser {
 }
 
 function setUser(){
+    e.preventDefault();
     if (inputs.name && inputs.email) {    
         let name = document.getElementById('name').value;
         let email = document.getElementById('email').value;
