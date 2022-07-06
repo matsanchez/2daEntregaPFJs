@@ -251,6 +251,30 @@ hr{
     cursor: pointer;
 }
 /* //////////////////////////////////// */
+/* ESTILOS TEMAS DE QUIZS */
+/* /////////////////////////////////////// */
+.themes_quiz{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+.themes_quiz img{
+    width: 200px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 20px 0px rgba(255, 255, 255, 0.5);
+}
+.icon_rules{
+    width: 150px;
+    margin: 15px;
+}
+.view_desactive{
+    display: none;
+}
+.view_active{
+    display: block;
+}
+/* //////////////////////////////////// */
 /* ESTILOS JUEGO DE MEMORIA */
 /* /////////////////////////////////////// */
 .notifications{

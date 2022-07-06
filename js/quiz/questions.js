@@ -1,4 +1,4 @@
-let history = [
+let historia = [
     {
         id: 01,
         question: "¿Cuál era la moneda utilizada en España antes del euro?" ,
@@ -81,7 +81,7 @@ let history = [
     }
 ]
 
-let naturalezaYciencia = [
+let naturaleza_y_ciencia = [
     {
         id: 01,
         question: "¿Quién es el inventor del telescopio reflector?" ,
@@ -247,7 +247,7 @@ let entretenimiento = [
     },
 ]
 
-let arteYliteratura = [
+let arte_y_literatura = [
     {
         id: 01,
         question: "¿Quién es el autor del libro 'Poeta en Nueva York'?" ,
