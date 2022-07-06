@@ -29,7 +29,7 @@ DOMlogin.innerHTML = `
                 </form>
                 <div id="validate_submit" class="d-grid">
                     <button type="button" id="getInfo" class="btn btn-info">Iniciar Sesion</button>
-                    <div class="msg_error mt-3 text-center"><span class="bg-danger p-2 rounded"><i class="bi bi-exclamation-triangle-fill"></i> Error: Todos los campos son Requeridos!</span></div>
+                    <div class="msg_error mt-3 text-center"><span class="bg-danger p-2 rounded"><i class="bi bi-exclamation-triangle-fill"></i> Error: Todos los fields son Requeridos!</span></div>
                 </div>
 
             </div>
@@ -42,35 +42,35 @@ const inputs = {name: false, email: false, }
 const DOMgetInfo = document.getElementById('getInfo').addEventListener('click', setUser);
 const DOMinputs = document.querySelectorAll('input');
 
-function validarFormulario(e){
+function validateForm(e){
     e.stopPropagation();
     switch (e.target.name) {
         case "user":
-            validarCampos(expReg.user, e.target, 'name')
+            validateInputs(expReg.user, e.target, 'name')
         break;
         case "email":
-            validarCampos(expReg.email, e.target, 'email')
+            validateInputs(expReg.email, e.target, 'email')
         break;
     }
 }
 
-function validarCampos(expresion, input, campo){
-    if (expresion.test(input.value)) {
-        document.getElementById(`validate_${campo}`).classList.remove('validate_error');
-        document.getElementById(`validate_${campo}`).classList.add('validate_confirm');
-        document.querySelector(`#validate_${campo} .msg_error`).classList.remove('msg_error_active');
-        inputs[campo] = true;
+function validateInputs(expression, input, field){
+    if (expression.test(input.value)) {
+        document.getElementById(`validate_${field}`).classList.remove('validate_error');
+        document.getElementById(`validate_${field}`).classList.add('validate_confirm');
+        document.querySelector(`#validate_${field} .msg_error`).classList.remove('msg_error_active');
+        inputs[field] = true;
     }else{
-        document.getElementById(`validate_${campo}`).classList.add('validate_error');
-        document.getElementById(`validate_${campo}`).classList.remove('validate_confirm');
-        document.querySelector(`#validate_${campo} .msg_error`).classList.add('msg_error_active');
-        inputs[campo] = false
+        document.getElementById(`validate_${field}`).classList.add('validate_error');
+        document.getElementById(`validate_${field}`).classList.remove('validate_confirm');
+        document.querySelector(`#validate_${field} .msg_error`).classList.add('msg_error_active');
+        inputs[field] = false
     }
 }
 
 DOMinputs.forEach((input) => {
-    input.addEventListener('keyup', validarFormulario);
-    input.addEventListener('blur', validarFormulario);
+    input.addEventListener('keyup', validateForm);
+    input.addEventListener('blur', validateForm);
 });
 
 
@@ -91,11 +91,43 @@ function setUser(){
         let user = new GetUser(name, email, score);      
         users.push(user);      
         localStorage.setItem('users', JSON.stringify(users));
-        window.location.replace("pages/home.html");
+        welcomeTo(name)
     }else{
         document.querySelector(`#validate_submit .msg_error`).classList.add('msg_error_active');
         setTimeout(() =>{
             document.querySelector(`#validate_submit .msg_error`).classList.remove('msg_error_active');
         }, 3000);
     }
+}
+
+function welcomeTo (name){
+    Swal.fire({
+        title: `Bienvenido ${name}`,
+        showClass: {
+            popup: 'animate__animated animate__flipInX'
+          },
+          hideClass: {
+            popup: 'animate__animated animate__fadeOutRightBig'
+          },
+        html: 'Ingresando en <b></b> segundos',
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: () => {
+          Swal.showLoading()
+          const b = Swal.getHtmlContainer().querySelector('b')
+          timerInterval = setInterval(() => {
+            b.textContent = (Swal.getTimerLeft() / 1000)
+            .toFixed(0)
+          }, 100)
+        },
+        willClose: () => {
+          clearInterval(timerInterval)
+        }
+      }).then((result) => {
+        if (result.dismiss === Swal.DismissReason.timer) {
+            setTimeout(()=> {
+                window.location.replace("pages/home.html");
+            },500);
+        }
+      })
 }
