@@ -1,10 +1,16 @@
 let cart;
-if(JSON.parse(localStorage.getItem('cart')))  {
-    cart = JSON.parse(localStorage.getItem('cart'))
+let users;
+
+if(JSON.parse(localStorage.getItem('cart')) || JSON.parse(localStorage.getItem('users')))  {
+    cart = JSON.parse(localStorage.getItem('cart'));
+    users = JSON.parse(localStorage.getItem('users'))
 } else {
     localStorage.setItem('cart', JSON.stringify([]))
+    localStorage.setItem('users', JSON.stringify([]))
     cart = JSON.parse(localStorage.getItem('cart'))
+    users = JSON.parse(localStorage.getItem('users'))
 }
+const DOMuserLogin = document.getElementById('user_login').textContent = `Hola ${users[0].name}`
 const totalCart=() =>{
     return cart.reduce((search, id) => search + id.price * id.cantidad, 0)
 }

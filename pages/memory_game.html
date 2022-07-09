@@ -33,23 +33,25 @@
                 <a class="nav-link">CONTACTO</a>
               </li>
             </ul>
+            <div class="d-flex me-4 text-warning"><span id="user_login"></span></div>
             <div class="d-flex">
-                <a href="./cart.html"><span id="cartCounter"></span>
+                <a href="./shop_cart.html"><span id="cartCounter"></span>
                    <img src="../img/icons/cart.png" class="iconCart" alt="Carrito de Compra">
                 </a>
             </div>
           </div>
         </div>
       </nav>
-    <div class="tableGameMemory container">
-        <div class="notifications container" >
-            <div>NOMBRE DEL JUEGO</div>
-            <div id="hits"><span>ACIERTOS</span></div>
-            <div id="time_left"><span>TIEMPO 30 SEGUNDOS</span></div>
-            <div id="movements"><span>MOVIMIENTOS</span></div>
+      <div class="view_game_memory container">
+        <div class="notifications col-xl-6 col-lg-7 col-md-9 col-sm-12">
+            <button id="hits" class="btn-lg bg-success btn-success col-4" disabled="disabled">ACIERTOS</button>
+            <button id="time_left" class="btn-lg bg-danger btn-danger col-4" disabled="disabled">TIEMPO: 30 SEGUNDOS</button>
+            <button id="movements" class="btn-lg bg-warning btn-warning col-4" disabled="disabled">MOVIDAS</button>
         </div>
-            <div id="boxGame"></div>
-    </div>
+        <div class="tableGameMemory col-xl-6 col-lg-7 col-md-9 col-sm-12">
+            <div id="boxGame" class="text-center"></div>
+        </div>
+      </div>
     <script src="../js/memory/main.js"></script>
 </body>
 </html>

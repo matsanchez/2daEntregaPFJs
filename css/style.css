@@ -277,14 +277,18 @@ hr{
 /* //////////////////////////////////// */
 /* ESTILOS JUEGO DE MEMORIA */
 /* /////////////////////////////////////// */
+.view_game_memory{
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+}
 .notifications{
-    background-color: #ffe259;
-    width: 400px;
+    display: flex;
+    justify-content: space-evenly;
+    margin: auto;
 }
 .tableGameMemory{
     margin: auto;
-    width: 700px;
-    display: flex;
 }
 .btn_memory{
     width: 120px;
@@ -295,8 +299,31 @@ hr{
 .cards_game_memory{
     width: 70px;
 }
-#memory_game{
-    cursor: pointer;
+@media (max-width:767px) {
+    .btn_memory{
+        width: 100px;
+        height: 100px;
+    }
+    #boxGame{
+        text-align: center;
+    }
+}
+@media (max-width:477px) {
+    .btn_memory{
+        width: 90px;
+        height: 90px;
+    }
+    #boxGame{
+        text-align: center;
+    }
+}
+#time_left, #hits, #movements, .title_memory{
+    background-color: #FFF;
+    margin: 3px;
+    height: 80px;
+    text-align: center;
+    padding: 10px;
+    font-size: 1rem;
 }
 /* ///////////////////////////////////////////////////// */
 /* VALIDACION DE FORMULARIO */

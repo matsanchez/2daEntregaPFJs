@@ -6,6 +6,7 @@ if(JSON.parse(localStorage.getItem('users')))  {
     localStorage.setItem('users', JSON.stringify([]))
     users = JSON.parse(localStorage.getItem('users'))
 }
+
 const DOMshowQuiz = document.getElementById('showQuiz');
 const DOMtitleQuiz = document.querySelector('.titleQuiz');
 const DOMtimerText = document.getElementById('timerText');
@@ -20,8 +21,6 @@ const DOMoption_4 = document.getElementById('3');
 const DOMbtnClose = document.getElementById('clouse_quiz').addEventListener('click', close =()=>{
     location.assign('./quiz_game.html');
 })
-
-
 
 const DOMrules = document.getElementById('rules').innerHTML = 
 `<img src="../img/icons/icon_rules.png" class="icon_rules" alt="">

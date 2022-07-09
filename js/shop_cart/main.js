@@ -61,8 +61,11 @@ let merchanProducts = [
         img:"../img/merchandising/varios.png"
     }
 ]
-let users;
+
+let users = [];
 let cart = [];
+
+
 const DOMcartCounter = document.getElementById('cartCounter');
 const DOMbtn_quiz_game = document.getElementById('quiz_game').addEventListener('click', e => {
     window.open('quiz_game.html', '_self');
@@ -82,6 +85,8 @@ if(JSON.parse(localStorage.getItem('cart')) || JSON.parse(localStorage.getItem('
 }
 
 showProducts();
+
+const DOMuserLogin = document.getElementById('user_login').textContent = `Hola ${users[0].name}`
 
 if (cart.length === 0) {
     DOMcartCounter.innerHTML = cart.length + 0
@@ -129,3 +134,51 @@ function addCart(e){
     localStorage.setItem('cart', JSON.stringify(cart));
     DOMcartCounter.innerHTML = cart.length
 }
+
+
+/* function cargarJSON(){
+    fetch('../js/shop_cart/products.json')
+    .then(function(res){
+        return res.json();
+    })
+    .then(function(data){
+        let card ='';
+        data.forEach(function(products){
+            card += `
+            <div class="card text-center m-2" style="width: 18rem;">
+                <img src=${products.img} class="d-block imgProducts img-fluid" alt="${products.name}">
+                <div class="card-body">
+                <h5 class="card-title">${products.name}</h5>
+                <p class="card-price">$${products.price}</p>
+                <button id=${products.id} class="btn btn-warning">Agregar al Carrito</button>
+                </div>
+            </div>
+            `
+        });
+        const containerProduct = document.getElementById('containerProduct')
+        containerProduct.innerHTML = card
+    })
+    .catch(function(error){
+        console.log(error);
+    })
+}
+
+document.addEventListener("click", (e)=>{
+    if(e.target && e.target.matches("button.btn")){
+        addCart(e.target.id);
+    }
+})
+
+function addCart(e){
+    const idFound = merchanProducts.find(prod => prod.id == e)
+    const inCart = cart.find(prod => prod.id == idFound.id)
+    if(!inCart) {
+        cart.push({...idFound, cantidad: 1})
+    } else {
+        let cartFilter = cart.filter(id => id.id != inCart.id)
+        cart = [...cartFilter, {...inCart, cantidad: inCart.cantidad + 1}]
+    }
+    
+    localStorage.setItem('cart', JSON.stringify(cart));
+    DOMcartCounter.innerHTML = cart.length
+} */

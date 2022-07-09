@@ -1,3 +1,11 @@
+if(JSON.parse(localStorage.getItem('users')))  {
+    users = JSON.parse(localStorage.getItem('users'))
+} else {
+    localStorage.setItem('users', JSON.stringify([]))
+    users = JSON.parse(localStorage.getItem('users'))
+}
+const DOMcartCounter = document.getElementById('cartCounter');
+const DOMuserLogin = document.getElementById('user_login').textContent = `Hola ${users[0].name}`
 const DOMboxGame = document.getElementById('boxGame');
 const DOMmovements = document.getElementById('movements')
 const DOMhits = document.getElementById('hits');
@@ -11,7 +19,7 @@ let secondShow;
 let movements = 0;
 let hits = 0;
 let timer = false;
-let timerTime = 1330;
+let timerTime = 30;
 let initTime = timerTime;
 let countDown;
 
@@ -24,7 +32,7 @@ cards = cards.sort(()=> {return Math.random()-0.5});
 function showmTable(){
     for (let i = 0; i < ids.length; i++) {
         const element = document.getElementById(i);
-        element.innerHTML = `<img src="../img/cards_game_memory/${cards[i]}.png" alt="Card" class="cards_game_memory">`
+        element.innerHTML = `<img src="../img/cards_game_memory/card_magic/${cards[i]}.png" alt="Card" class="cards_game_memory">`
         element.disabled = true;
     }
 }
@@ -33,18 +41,15 @@ function showmTable(){
 function countTime(){
     countDown = setInterval(()=>{
         timerTime--;
-        DOMtime_left.innerHTML = `Tiempo: ${timerTime} segundos`;
-        if (timerTime == 0) {
-            clearInterval(countDown);
-            blockTable();            
-        }
+        DOMtime_left.innerHTML = `TIEMPO<br>${timerTime} segundos`;
+        timerTime == 0 && (clearInterval(countDown), blockTable(), DOMtime_left.innerHTML = `<h5><b>SE ACABO EL TIEMPO<b></h5>`);
     },1000)
 }
 
 function blockTable(){
     for (let i = 0; i < ids.length; i++) {
         const element = document.getElementById(i);
-        element.innerHTML = `<img src="../img/cards_game_memory/${cards[i]}.png" alt="Card" class="cards_game_memory">`
+        element.innerHTML = `<img src="../img/cards_game_memory/card_magic/${cards[i]}.png" alt="Card" class="cards_game_memory">`
         element.disabled = true;
     }
 }
@@ -82,29 +87,29 @@ function selectOption(idBtn){
     if (showSelect == 1) {
         selectCard1 = document.getElementById(idBtn);
         firstShow = cards[idBtn];
-        selectCard1.innerHTML = `<img src="../img/cards_game_memory/${firstShow}.png" alt="Card" class="cards_game_memory">`
+        selectCard1.innerHTML = `<img src="../img/cards_game_memory/card_magic/${firstShow}.png" alt="Card" class="cards_game_memory">`
 
         selectCard1.disabled = true;
     }else if(showSelect == 2){
         selectCard2 = document.getElementById(idBtn);
         secondShow = cards[idBtn];
-        selectCard2.innerHTML = `<img src="../img/cards_game_memory/${secondShow}.png" alt="Card" class="cards_game_memory">`
+        selectCard2.innerHTML = `<img src="../img/cards_game_memory/card_magic/${secondShow}.png" alt="Card" class="cards_game_memory">`
 
         selectCard2.disabled = true;
         movements++
-        DOMmovements.innerHTML = `Movimientos: ${movements}`;
+        DOMmovements.innerHTML = `MOVIMIENTOS<br>${movements}`;
         
         if (firstShow == secondShow) {
             showSelect = 0;
 
             hits++
-            DOMhits.innerHTML = `Aciertos: ${hits}`;
+            DOMhits.innerHTML = `ACIERTOS<br>${hits}`;
 
             if (hits == 8) {
                 clearInterval(countDown);
-                DOMhits.innerHTML = `Aciertos: ${hits} LISTO!!`
-                DOMtime_left.innerHTML = `Perfecto, solo demoraste ${initTime - timerTime} segundos`
-                DOMmovements.innerHTML = `Movimientos: ${movements} LISTO!!`;
+                DOMhits.innerHTML = `Lo hiciste en <b>${hits}</b> aciertos!`
+                DOMtime_left.innerHTML = `WoW! lo hiciste en <b>${initTime - timerTime}</b> segundos`
+                DOMmovements.innerHTML = `Logrado en <b>${movements}</b> movimientos`;
             }
         }else{
             setTimeout(()=>{
