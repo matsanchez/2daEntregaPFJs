@@ -1,0 +1,148 @@
+[
+    {
+        "theme": "historia",
+        "questions":[{
+            "id": 1,
+            "question": "¿Cuál era la moneda utilizada en España antes del euro?",
+            "options": ["La Peseta", "116 años", "Santa Elena", "La Cacerola"],
+            "answer": "La peseta",
+            "score":1
+        },
+        {
+            "id": 2,
+            "question": "¿En qué isla encarcelaron a Napoleón tras perder la batalla de Waterloo?" ,
+            "options": ["1", "2", "3", "Santa Elena"],
+            "answer": "Santa Elena",
+            "score": 1
+        },
+        {
+            "id": 3,
+            "question": "¿A qué rey considera de gran importancia el movimiento rastafari?" ,
+            "options": ["1", "2", "3", "Al rey Haile Selassie I"],
+            "answer": "Al rey Haile Selassie I",
+            "score": 1
+        },
+        {
+            "id": 4,
+            "question": "¿Cuántos años tuvo de duración la Guerra de los Cien Años?" ,
+            "options": ["1", "2", "3", "116 años"],
+            "answer": "116 años",
+            "score": 1
+        },
+        {
+            "id": 5,
+            "question": "¿Cuándo se creó la ONU?" ,
+            "options": ["1", "2", "3", "En 1945"],
+            "answer": "En 1945",
+            "score": 1
+        },
+        {
+            "id": 6,
+            "question": "¿En qué año se independizó Eslovenia de Yugoslavia?" ,
+            "options": ["1", "2", "3", "En 1991"],
+            "answer": "En 1991",
+            "score": 1
+        },
+        {
+            "id": 7,
+            "question": "¿Qué personaje romano da nombre al mes de julio?" ,
+            "options": ["1", "2", "3", "Julio César"],
+            "answer": "Julio César",
+            "score": 1
+        },
+        {
+            "id": 8,
+            "question": "¿Quiénes fundaron la ciudad de Roma según la leyenda?" ,
+            "options": ["1", "2", "3", "Los hermanos Rómulo y Remo"],
+            "answer": "Los hermanos Rómulo y Remo",
+            "score": 1
+        },
+        {
+            "id": 9,
+            "question": "¿Quién fue el primer presidente de Estados Unidos?" ,
+            "options": ["1", "2", "3", "George Washington"],
+            "answer": "George Washington",
+            "score": 1
+        },
+        {
+            "id": 10,
+            "question": "¿Con qué nombre se conocía la Primera Guerra Mundial antes de la segunda?" ,
+            "options": ["1", "2", "3", "La Gran Guerra"],
+            "answer": "La Gran Guerra",
+            "score": 1
+        }]
+    },
+    {
+        "theme": "naturaleza_y_ciencia",
+        "questions":[{
+            "id": 1,
+            "question": "¿Quién es el inventor del telescopio reflector?" ,
+            "options": ["1", "2", "3", "Isaac Newton"],
+            "answer": "Isaac Newton",
+            "score": 1
+        },
+        {
+            "id": 2,
+            "question": "¿Con qué nombre se conoce el miedo a las alturas?" ,
+            "options": ["1", "2", "3", "Acrofobia"],
+            "answer": "Acrofobia",
+            "score": 1
+        },
+        {
+            "id": 3,
+            "question": "Todos los componentes orgánicos comparten un mismo elemento. ¿Cuál?" ,
+            "options": ["1", "2", "3", "El carbono"],
+            "answer": "El carbono",
+            "score": 1
+        },
+        {
+            "id": 4,
+            "question": "¿Cuál es la planta principal con la que se hace el tequila?" ,
+            "options": ["1", "2", "3", "El agave"],
+            "answer": "El agave",
+            "score": 1
+        },
+        {
+            "id": 5,
+            "question": "¿Con qué nombre se denominan las células nerviosas?" ,
+            "options": ["1", "2", "3", "Neuronas"],
+            "answer": "Neuronas",
+            "score": 1
+        },
+        {
+            "id": 6,
+            "question": "La claustrofobia es el nombre técnico del miedo que tienen ciertas personas... ¿a qué?" ,
+            "options": ["1", "2", "3", "A estar en espacios cerrados"],
+            "answer": "A estar en espacios cerrados",
+            "score": 1
+        },
+        {
+            "id": 7,
+            "question": "Marie Curie fue una científica muy famosa. ¿Por qué?" ,
+            "options": ["1", "2", "3", "Descubrió la radiactividad"],
+            "answer": "Descubrió la radiactividad",
+            "score": 1
+        },
+        {
+            "id": 8,
+            "question": "Existe un mes en el que puede haber menos de 4 fases lunares. ¿Cuál es?" ,
+            "options": ["1", "2", "3", "Febrero"],
+            "answer": "Febrero",
+            "score": 1
+        },
+        {
+            "id": 9,
+            "question": "E=mc2 es una fórmula incluida en una teoría científica. ¿Cuál?" ,
+            "options": ["1", "2", "3", "En la teoría de la relatividad"],
+            "answer": "En la teoría de la relatividad",
+            "score": 1
+        },
+        {
+            "id": 10,
+            "question": "¿Cuáles son las células más importantes y numerosas del cerebro?" ,
+            "options": ["1", "2", "3", "Las células nerviosas"],
+            "answer": "Las células nerviosas",
+            "score": 1
+        }]
+    }
+]

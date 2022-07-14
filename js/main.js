@@ -28,7 +28,7 @@ DOMlogin.innerHTML = `
                     </div>
                 </form>
                 <div id="validate_submit" class="d-grid">
-                    <button type="button" id="getInfo" class="btn btn-info">Iniciar Sesion</button>
+                    <button type="button" id="getInfo" class="btn btn-info">A jugar!</button>
                     <div class="msg_error mt-3 text-center"><span class="bg-danger p-2 rounded"><i class="bi bi-exclamation-triangle-fill"></i> Error: Todos los fields son Requeridos!</span></div>
                 </div>
 
@@ -75,10 +75,15 @@ DOMinputs.forEach((input) => {
 
 
 class GetUser {
-  constructor(name, email, score) {
+  constructor(name, email, scoreAll, score_art_literatura, score_entretenimiento, score_geografia, score_historia, score_natur_ciencia) {
     this.name = name;
     this.email = email;
-    this.score = score;
+    this.scoreAll = scoreAll;
+    this.score_art_literatura = score_art_literatura;
+    this.score_entretenimiento = score_entretenimiento;
+    this.score_geografia = score_geografia;
+    this.score_historia = score_historia;
+    this.score_natur_ciencia = score_natur_ciencia;
   }
 
 }
@@ -87,8 +92,13 @@ function setUser(){
     if (inputs.name && inputs.email) {    
         let name = document.getElementById('name').value;
         let email = document.getElementById('email').value;
-        let score = 0;      
-        let user = new GetUser(name, email, score);      
+        let scoreAll = 0;
+        let score_art_literatura = 0
+        let score_entretenimiento = 0
+        let score_geografia = 0;
+        let score_historia = 0;
+        let score_natur_ciencia = 0;
+        let user = new GetUser(name, email, scoreAll, score_art_literatura, score_entretenimiento, score_geografia, score_historia, score_natur_ciencia);      
         users.push(user);      
         localStorage.setItem('users', JSON.stringify(users));
         welcomeTo(name)
@@ -131,3 +141,10 @@ function welcomeTo (name){
         }
       })
 }
+let bot = new GetUser("CrackQuiz", "unocualquiera@hotmail.com", 0, 80, 60, 70, 50, 90);
+let bot1 = new GetUser("TerminatorQuiz", "probando@hotmail.com", 0, 90, 60, 50, 70, 80);
+let bot2 = new GetUser("Maria_Antonieta", "marianto@hotmail.com", 0, 30, 50, 70, 90, 20);
+let bot3 = new GetUser("Roberto_Manfredi", "robertoman@hotmail.com", 0, 40, 10, 20, 70, 100);
+let bot4 = new GetUser("NicolasPalermo", "parnico@hotmail.com", 0, 100, 80, 50, 60, 70);
+users.push(bot, bot1, bot2, bot3, bot4);
+

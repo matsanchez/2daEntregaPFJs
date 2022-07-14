@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/style.css">
-    <title>Carrito de Compras</title>
+    <title>Principal</title>
 </head>
 <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
@@ -26,7 +26,7 @@
                 <a class="nav-link" href="#">JUEGOS</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="home.html">MERCHANDISING</a>
+                <a class="nav-link" href="#containerProduct">MERCHANDISING</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link">CONTACTO</a>
@@ -34,19 +34,38 @@
             </ul>
             <div class="d-flex me-4 text-warning"><span id="user_login"></span></div>
             <div class="d-flex">
-                <a href="shop_cart.html">
-                    <img src="../img/icons/cart.png" class="iconCart" alt="Carrito de Compra">
-                    <span id="cartCounter"></span>
+                <a href="shop_cart.html"><span id="cartCounter"></span>
+                   <img src="../img/icons/cart.png" class="iconCart" alt="Carrito de Compra">
                 </a>
             </div>
           </div>
         </div>
       </nav>
+      <div class="bg_ranking container">
+        <div class="text-center"><img src="../img/header_ranking.png" alt=""></div>
+        <table class="table text-center table-responsive">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Puntaje</th>
+                <th scope="col">Art y Lit.</th>
+                <th scope="col">Entret.</th>
+                <th scope="col">Geogr.</th>
+                <th scope="col">Historia</th>
+                <th scope="col">Nat y Cienc.</th>
+              </tr>
+            </thead>
+            <tbody id="ranking">
+              <!-- <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+              </tr> -->
+            </tbody>
+          </table>
       </div>
-      <div id="mostrarModal"></div>
-      <div id="cartSection"></div>
-      <script src="../js/shop_cart/shop_cart.js"></script>
-      <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+      <script src="../js/quiz/ranking.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
 </body>
 </html>

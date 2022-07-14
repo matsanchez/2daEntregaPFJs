@@ -1,12 +1,8 @@
-let users=[];
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+let users = JSON.parse(localStorage.getItem('users')) || [];
 
-if(JSON.parse(localStorage.getItem('users')))  {
-    users = JSON.parse(localStorage.getItem('users'))
-} else {
-    localStorage.setItem('users', JSON.stringify([]))
-    users = JSON.parse(localStorage.getItem('users'))
-}
-
+const DOMcartCounter = document.getElementById('cartCounter');
+cart.length === 0 ? DOMcartCounter.innerHTML = cart.length + 0 : DOMcartCounter.innerHTML = cart.length;
 const DOMshowQuiz = document.getElementById('showQuiz');
 const DOMtitleQuiz = document.querySelector('.titleQuiz');
 const DOMtimerText = document.getElementById('timerText');
@@ -186,7 +182,7 @@ function loadScore(dataChoice){
 }
 
 function showScore(){
-    users[0].score = users[0].score + userScore;
+    users[5].score = users[5].score + userScore;
     localStorage.setItem('users', JSON.stringify(users))
 }
 
